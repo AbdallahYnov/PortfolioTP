@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    }
+    
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+    
+#presentation_profils { 
+    background-color: white;
+    color:black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 60px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+/* présentation_profils.css */
+.profil-cards-container {
+    padding: 20px;
+    background-color: white;  
+    color: black;  
+    border-radius: 8px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #2185d8;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #2185d8; 
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, padding-bottom 0.3s ease, border 0.3s ease; /* Ajout de la transition pour la bordure */
+}
+
+.profile-card:hover {
+    transform: scale(1.05); 
+    border-radius: 20px; 
+    border: 3px solid #2185d8; 
+}
+
+.profile-card h3 {
+    color: #2185d8; 
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    color: black;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.view-portfolio-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    border: none;
+    color: #2185d8;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    background-color: white;
+}
+
+.view-portfolio-btn:hover {
+    background-color: white;
+    border-bottom: solid 2px;
+    color: #2185d8;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    width: 250px;
+}
+
+/* Effet au survol du bouton retour */
+.back-btn:hover {
+    background-color: white;
+    color: #2185d8;
+}
+
+

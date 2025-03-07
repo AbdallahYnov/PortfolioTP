@@ -1,0 +1,192 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    }
+    
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+    
+#porte_folio_user { 
+    background-color: white;
+    color:black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 60px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+.porte_folio_user-container {
+    width: 80%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #2185d8;
+    margin-bottom: 50px;
+}
+
+.user-cv {
+    margin-top: 20px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.download-btn {
+    background-color: #2185d8;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 11%;
+    display: flex;
+    place-self: center
+}
+
+.download-btn:hover {
+    background-color: #2185d8;
+}
+
+h1 {
+    font-size: 40px;
+    color: #2185d8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    margin-left: 100px;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.user-name{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+}
+
+p{
+    font-size: 60px;
+    height: 70px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 110px;
+    border-bottom: solid 2px #2185d8;
+}
+
+.user-contact{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 60px;
+    border: solid 2px #2185d8;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+}
+
+.contact-item{
+    color:black;
+    font-size: 24px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+table{
+    color: black;
+    border: solid 2px #2185d8;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th{
+    border: solid 2px #2185d8;
+    width: 25%;
+}
+
+td{
+    border: solid 2px #2185d8;
+    height: 95px;
+    padding-left: 20px;
+}
+
+.user-competences{
+    margin-bottom: 60px;
+    margin-top: 60px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.user-projects {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    width: 250px;
+}
+
+/* Effet au survol du bouton retour */
+.back-btn:hover {
+    background-color: white;
+    color: #2185d8;
+}
+
+
+a {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.MAJ{
+    margin-left: 22%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    border: none;
+    color: #2185d8;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    background-color: white;
+}
+
+.MAJ:hover {
+    background-color: white;
+    border-bottom: solid 2px;
+    color: #2185d8;
+}

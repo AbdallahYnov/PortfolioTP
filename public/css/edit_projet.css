@@ -1,0 +1,209 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    }
+    
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+    
+#edit_projet { 
+    background-color: white;
+    color:black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 60px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+.edit_projet-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+h2 {
+    font-size: 24px;
+    color:#2185d8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 35%;
+}
+
+.form1{
+    background-color: white;
+    padding: 20px;
+    border-right: solid 2px #2185d8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 35%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    border-bottom: solid 2px #2185d8;
+    padding-bottom: 15px;
+}
+
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2185d8;
+    display: block;
+    padding-bottom: 10px;
+}
+
+input[type="text"], input[type="file"], input[type="url"], textarea {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+small {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+
+button {
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+form input, form textarea, form button {
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    color: #2185d8;
+}
+
+form input, form textarea, form button :hover {
+    background-color: white;
+    border-bottom: solid 2px;
+    color: #2185d8;
+}
+
+.project-cards {
+    width: 65%;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    border: 1px solid  #2185d8;
+    padding: 15px;
+    margin: 10px;
+    width: 600px;
+    height: 120px;
+}
+
+.card1{
+    margin: 30px;
+}
+
+.card2{
+    width: 350px;
+}
+
+.supp_btn{
+    width: 90px;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+}
+
+.card h3{
+    color:black;
+}
+
+.card p{
+    color: black;
+}
+
+.card a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    width: 250px;
+}
+
+/* Effet au survol du bouton retour */
+.back-btn:hover {
+    background-color: white;
+    color: #2185d8;
+}
+
+.MAJ{
+    margin-left: 24%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    border: none;
+    color: #2185d8;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+}
+
+.MAJ:hover {
+    background-color: white;
+    border-bottom: solid 2px;
+    color: #2185d8;
+}
+
+

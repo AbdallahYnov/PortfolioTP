@@ -1,0 +1,166 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    }
+    
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+    
+#login { 
+    background-color: white;
+    color:black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 60px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+.login-container {
+    width: 80%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Tabs for switching between login and register */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    border-color: #2185d8;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+}
+
+.tab-link:hover,
+.tab-link.active {
+    color: #2185d8;
+}
+
+h2{
+    color:#2185d8;
+}
+
+/* Form container styles */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input fields */
+form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+form label {
+    color: black;
+}
+
+form input:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+/* Buttons */
+form button {
+    padding: 12px 20px;
+    background-color:white;
+    color: black;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    margin-left: 38%;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+}
+
+form button:hover {
+    color: #2185d8;
+    border-bottom: solid 2px;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    width: 250px;
+}
+
+/* Effet au survol du bouton retour */
+.back-btn:hover {
+    background-color: white;
+    color: #2185d8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    form input,
+    form button {
+        font-size: 14px;
+    }
+}

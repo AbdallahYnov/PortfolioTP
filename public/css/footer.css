@@ -1,0 +1,82 @@
+/* Footer - Styles de base */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(180deg, white, #3533cd);
+    color: black;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+/* Assurez-vous que le body et le HTML prennent toute la hauteur */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur principal pour pousser le footer en bas */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur du footer */
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Partie supérieure du footer avec le logo */
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Logo centré */
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+/* Liens du footer */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Style des liens */
+.footer-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+}
+
+/* Effet hover sur les liens */
+.footer-links a:hover {
+    color: #2185d8;
+    border-bottom: solid 2px;
+}
+
+/* Texte du bas */
+.footer-bottom {
+    margin-top: 10px;
+    font-size: 14px;
+}
+

@@ -1,0 +1,169 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    }
+    
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+    
+#gestion_profil { 
+    background-color: white;
+    color:black;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 60px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+.gestion_profil-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 80%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+h2 {
+    font-size: 24px;
+    color:#2185d8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.formulaire{
+    display: flex;
+    ;
+}
+
+form {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.form1{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 48%;
+}
+
+.form2{
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-left: 40px;
+    max-width: 48%;
+    padding-left: 50px;
+    margin-left: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    border-bottom: solid 2px #2185d8;
+    padding-bottom: 15px;
+}
+
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2185d8;
+    display: block;
+    padding-bottom: 10px;
+}
+
+input[type="text"], input[type="file"], input[type="url"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+small {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+
+button {
+    background-color: #2185d8;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.MAJ{
+    margin-left: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    border: none;
+    color: #2185d8;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+}
+
+.MAJ:hover {
+    background-color: white;
+    border-bottom: solid 2px;
+    color: #2185d8;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    width: 250px;
+}
+
+/* Effet au survol du bouton retour */
+.back-btn:hover {
+    background-color: white;
+    color: #2185d8;
+}
+
+
