@@ -129,5 +129,24 @@ class User {
         $stmt->bindParam(':user_id', $user_id);
         return $stmt->execute();
     }
+
+    // Méthode pour stocker le token "se souvenir de moi" dans la base de données
+    public function storeRememberToken($user_id, $token) {
+        $query = "UPDATE users SET remember_token = :token WHERE id = :user_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':token', $token);
+        $stmt->bindParam(':user_id', $user_id);
+        return $stmt->execute();
+    }
+
+    // Méthode pour récupérer un utilisateur via le token "se souvenir de moi"
+    public function getUserByRememberToken($token) {
+        $query = "SELECT * FROM users WHERE remember_token = :token";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':token', $token);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
 ?>
