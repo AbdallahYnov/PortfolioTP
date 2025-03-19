@@ -148,6 +148,11 @@ footer {
     color: #2185d8;
 }
 
+small {
+    font-size: smaller;
+    color: #2185d8;;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .login-container {

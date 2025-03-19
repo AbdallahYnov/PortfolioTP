@@ -25,31 +25,48 @@ class ProfilController {
         return $userData;
     }
 
-
+    // Mise à jour du profil utilisateur
     public function updateUser() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Récupérer les données du formulaire
-            $nom = $_POST['nom'];
-            $prenom = $_POST['prenom'];
-            $email = $_POST['email'];
-            $telephone = $_POST['telephone'];
-            $adresse = $_POST['adresse'];
-            $cp = $_POST['cp'];
-            $ville = $_POST['ville'];
+            // Protection CSRF
+            if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+                die('Erreur CSRF');
+            }
 
-            // Récupérer la photo (en BLOB)
+            // Assainissement des entrées utilisateur pour éviter XSS
+            $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
+            $prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING);
+            $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+            $telephone = filter_input(INPUT_POST, 'telephone', FILTER_SANITIZE_STRING);
+            $adresse = filter_input(INPUT_POST, 'adresse', FILTER_SANITIZE_STRING);
+            $cp = filter_input(INPUT_POST, 'cp', FILTER_SANITIZE_STRING);
+            $ville = filter_input(INPUT_POST, 'ville', FILTER_SANITIZE_STRING);
+
+            // Validation de l'email (s'assurer qu'il est valide)
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "L'email n'est pas valide.";
+                exit;
+            }
+
+            // Gestion de la photo (en BLOB)
             $photo = null;
             if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
                 if ($_FILES['photo']['type'] == 'image/jpeg' || $_FILES['photo']['type'] == 'image/png') {
                     $photo = file_get_contents($_FILES['photo']['tmp_name']);
+                } else {
+                    echo "Format de photo invalide.";
+                    exit;
                 }
             }
 
-            // Récupérer le CV (en BLOB)
+            // Gestion du CV (en BLOB)
             $cv = null;
             if (isset($_FILES['cv']) && $_FILES['cv']['error'] == 0) {
                 if ($_FILES['cv']['type'] == 'application/pdf') {
                     $cv = file_get_contents($_FILES['cv']['tmp_name']);
+                } else {
+                    echo "Format de CV invalide.";
+                    exit;
                 }
             }
 
@@ -68,7 +85,7 @@ class ProfilController {
             // Appeler la méthode de mise à jour du modèle
             if ($this->profilModel->updateUserInfo($_SESSION['user_id'], $nom, $prenom, $email, $photo, $cv, $telephone, $adresse, $cp, $ville)) {
                 // Rediriger vers le tableau de bord de l'utilisateur
-                header("Location: dashboard_user.php");
+                header("Location: /views/dashboard_user.php");
                 exit();
             } else {
                 echo "Erreur lors de la mise à jour du profil.";
@@ -76,5 +93,4 @@ class ProfilController {
         }
     }
 }
-
 ?>

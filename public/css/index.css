@@ -3,13 +3,8 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-    }
-    
-.container {
-    width: 80%;
-    margin: 20px auto;
 }
-    
+
 #index { 
     background-color: white;
     color:black;
@@ -17,4 +12,20 @@ body {
     padding: 20px;
     margin: 60px;
     box-shadow: 0 4px 8px #2185d8;
+}
+
+.index-container {
+    width: 80%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #2185d8;
+}
+
+h2 {
+    font-size: 24px;
+    color: #2185d8;
+    margin-bottom: 20px;
+    text-align: center;
 }

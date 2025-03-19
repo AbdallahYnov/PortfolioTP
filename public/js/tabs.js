@@ -22,3 +22,15 @@ function openTab(event, tabName) {
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("login").style.display = "block";
 });
+
+// Fonction pour afficher le formulaire de connexion
+function showLogin() {
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('registerForm').style.display = 'none';
+}
+
+// Fonction pour afficher le formulaire d'inscription
+function showRegister() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'block';
+}

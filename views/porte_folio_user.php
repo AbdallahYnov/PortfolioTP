@@ -10,7 +10,13 @@ $projectController = new ProjectController($db);
 $competenceUserController = new CompetenceUserController($db);
 
 // Vérifier si l'ID de l'utilisateur est passé dans l'URL
-$user_id = isset($_GET['user_id']) ? $_GET['user_id'] : $_SESSION['user_id'];
+$user_id = isset($_GET['user_id']) ? filter_var($_GET['user_id'], FILTER_VALIDATE_INT) : $_SESSION['user_id'];
+
+// Si l'ID utilisateur est invalide, rediriger vers une page d'erreur
+if ($user_id === false) {
+    header('Location: error.php');  // Page d'erreur personnalisée
+    exit();
+}
 
 // Récupérer les informations de l'utilisateur
 $userInfo = $profilController->getUserInfo($user_id);
@@ -34,7 +40,6 @@ $competences = $competenceUserController->showCompetences($user_id);
     <a href="dashboard_user.php" class="back-btn">Retour au tableau de bord</a>
 
     <div class="porte-folio-container">
-
         <div class="user-info">
             <!-- Affichage de la photo de l'utilisateur -->
             <div class="user-photo">
@@ -54,7 +59,6 @@ $competences = $competenceUserController->showCompetences($user_id);
 
         <h1>Mes Contacts</h1>
         <div class="user-contact">
-
             <!-- Div pour le numéro de téléphone -->
             <div class="contact-item">
                 <?= htmlspecialchars($userInfo['telephone']); ?>
@@ -119,7 +123,7 @@ $competences = $competenceUserController->showCompetences($user_id);
                                 </td>
                                 <td><?= htmlspecialchars($project['titre']); ?></td>
                                 <td><?= htmlspecialchars($project['description']); ?></td>
-                                <td><a href="<?= $project['lien']; ?>" class="MAJ" target="_blank">Voir le projet</a></td>
+                                <td><a href="<?= htmlspecialchars($project['lien']); ?>" class="MAJ" target="_blank">Voir le projet</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -141,20 +145,6 @@ $competences = $competenceUserController->showCompetences($user_id);
     </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
