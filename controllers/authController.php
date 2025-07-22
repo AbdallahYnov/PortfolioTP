@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('../models/User.php');  // Assurez-vous que le bon modèle est inclus
+include_once('../models/User.php');  
 include_once('../config/database.php');
 
 // Vérification de l'action de la connexion
@@ -26,18 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['role'] = $user['role']; // Récupérer et stocker le rôle de l'utilisateur
-
-            // Si "Se souvenir de moi" est coché, créer un cookie
-            if (isset($_POST['remember_me']) && $_POST['remember_me'] == 'on') {
-                // Créer un identifiant unique pour le cookie
-                $remember_token = bin2hex(random_bytes(16));
-
-                // Enregistrer le token dans la base de données
-                $userModel->storeRememberToken($user['id'], $remember_token);
-
-                // Créer un cookie qui dure 30 jours
-                setcookie('remember_me', $remember_token, time() + 30 * 24 * 60 * 60, "/", null, true, true);
-            }
 
             // Rediriger l'utilisateur selon son rôle
             if ($user['role'] === 'admin') {

@@ -10,9 +10,6 @@ session_unset();
 // Détruire la session
 session_destroy();
 
-// Supprimer le cookie "remember_me"
-setcookie('remember_me', '', time() - 3600, '/', null, true, true);
-
 // Rediriger l'utilisateur vers la page d'accueil (index)
 header('Location: ../views/index.php');
 exit();

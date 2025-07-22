@@ -59,6 +59,5 @@ if (!isset($_SESSION['user_id'])) {
 
     <?php include '../includes/footer.php'; ?>
 
-    <script src="../public/js/carousel.js"></script>
 </body>
 </html>

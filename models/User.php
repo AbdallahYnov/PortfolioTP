@@ -8,20 +8,21 @@ class User {
 
     // Méthode pour vérifier si l'utilisateur existe
     public function verifyUser($email, $password) {
-        // Assainir l'email pour éviter XSS
-        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        
-        $stmt = $this->db->prepare("SELECT * FROM users WHERE email = :email");
+        // Requête pour récupérer l'utilisateur par email
+        $query = "SELECT * FROM users WHERE email = :email LIMIT 1";
+        $stmt = $this->db->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-
+    
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // Vérifier le mot de passe
-        if ($user && password_verify($password, $user['mot_de_passe'])) {
+    
+        if ($user && password_verify($password, $user['password'])) {
+            // Retourne l'utilisateur si l'email et le mot de passe sont corrects
             return $user;
         }
-        return null;
+    
+        // Retourne false si l'utilisateur n'est pas trouvé ou les identifiants sont incorrects
+        return false;
     }
 
     // Méthode pour enregistrer un nouvel utilisateur
@@ -35,7 +36,7 @@ class User {
         $cp = htmlspecialchars(trim($cp), ENT_QUOTES, 'UTF-8');
         $ville = htmlspecialchars(trim($ville), ENT_QUOTES, 'UTF-8');
         
-        // Validation de l'email
+       // Validation de l'email avant l'insertion dans la base de données
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return false; // Retourner false si l'email est invalide
         }
@@ -130,23 +131,5 @@ class User {
         return $stmt->execute();
     }
 
-    // Méthode pour stocker le token "se souvenir de moi" dans la base de données
-    public function storeRememberToken($user_id, $token) {
-        $query = "UPDATE users SET remember_token = :token WHERE id = :user_id";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':token', $token);
-        $stmt->bindParam(':user_id', $user_id);
-        return $stmt->execute();
-    }
-
-    // Méthode pour récupérer un utilisateur via le token "se souvenir de moi"
-    public function getUserByRememberToken($token) {
-        $query = "SELECT * FROM users WHERE remember_token = :token";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':token', $token);
-        $stmt->execute();
-
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
 }
 ?>

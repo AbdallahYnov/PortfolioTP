@@ -21,26 +21,6 @@ if (isset($_SESSION['user_id'])) {
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
-
-// Vérifier si le cookie "remember_me" est présent
-if (isset($_COOKIE['remember_me'])) {
-    $remember_token = $_COOKIE['remember_me'];
-
-    // Créer un modèle pour l'utilisateur
-    $userModel = new User($db);
-
-    // Récupérer l'utilisateur par le token de "se souvenir de moi"
-    $user = $userModel->getUserByRememberToken($remember_token);
-
-    if ($user) {
-        // Pré-remplir l'email dans le formulaire de connexion
-        $email = $user['email'];
-    } else {
-        $email = ''; // Si le token n'est pas valide, ne rien afficher
-    }
-} else {
-    $email = ''; // Pas de cookie, donc rien à pré-remplir
-}
 ?>
 
 
@@ -78,11 +58,6 @@ if (isset($_COOKIE['remember_me'])) {
 
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" required>
-
-                <!-- Case "Se souvenir de moi" -->
-                <label for="remember_me">
-                    <input type="checkbox" id="remember_me" name="remember_me"> Se souvenir de moi
-                </label>
 
                 <button type="submit">Se connecter</button>
             </form>
