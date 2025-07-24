@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('../models/User.php');
 include_once('../config/database.php');
 
@@ -49,6 +48,11 @@ if (!isset($_SESSION['csrf_token'])) {
         <div id="login" class="tab-content active">
 
             <h2>Connexion</h2>
+
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="error-message"><?= $_SESSION['error']; ?></div>
+                <?php unset($_SESSION['error']); ?>
+            <?php endif; ?>
 
             <form action="../controllers/authController.php" method="POST">
                 <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
