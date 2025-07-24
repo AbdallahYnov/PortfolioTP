@@ -42,7 +42,7 @@ if (isset($_GET['user_id'])) {
                     <?php if (!empty($user['photo'])): ?>
                         <img src="data:image/jpeg;base64,<?= base64_encode($user['photo']); ?>" alt="Photo de <?= htmlspecialchars($user['nom']); ?>" class="profile-photo">
                     <?php else: ?>
-                        <img src="../public/images/default-avatar.png" alt="Photo par défaut" class="profile-photo">
+                        <img src="../public/image/default_profile.png" alt="Photo par défaut" class="profile-photo">
                     <?php endif; ?>
                     
                     <h3><?= htmlspecialchars($user['nom'] . ' ' . $user['prenom']); ?></h3>
