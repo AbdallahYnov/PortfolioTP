@@ -42,10 +42,10 @@ $competences = $competenceUserController->showCompetences($user_id);
         <div class="user-info">
             <!-- Affichage de la photo de l'utilisateur -->
             <div class="user-photo">
-                <?php if ($userInfo['photo']): ?>
+                <?php if (!empty($userInfo['photo'])): ?>
                     <img src="data:image/jpeg;base64,<?= base64_encode($userInfo['photo']); ?>" alt="Photo de <?= htmlspecialchars($userInfo['prenom']); ?>">
                 <?php else: ?>
-                    <img src="default-image.jpg" alt="Photo par défaut">
+                    <img src="../public/image/default_profile.png" alt="Photo par défaut">
                 <?php endif; ?>
             </div>
             
@@ -134,8 +134,8 @@ $competences = $competenceUserController->showCompetences($user_id);
 
         <div class="user-cv">
         <h1>Mon CV</h1>
-        <?php if ($userInfo['CV']): ?>
-            <a href="data:application/pdf;base64,<?= base64_encode($userInfo['CV']); ?>" download="Mon_CV.pdf" class="download-btn">
+        <?php if ($userInfo['cv']): ?>
+            <a href="data:application/pdf;base64,<?= base64_encode($userInfo['cv']); ?>" download="Mon_CV.pdf" class="download-btn">
                 Télécharger mon CV
             </a>
         <?php else: ?>
