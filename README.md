@@ -62,7 +62,7 @@ Ce projet est une application web développée en PHP & MySQL permettant aux uti
 
 4. Démarrer le serveur PHP et tester l'application :
    ```sh
-   php -S localhost:8080
+   php -S localhost:8080 router.php
    ```
    Puis accéder à l'application via `http://localhost:8000`
 
