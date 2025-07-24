@@ -103,4 +103,4 @@ UN exemple de structure possible (la première ligne doit respecter cette struct
 Ce projet est sous licence MIT.
 
 ## Contact
-Une question ou un bug ? Contactez-moi : mon.email@example.com
+Une question ou un bug ? Contactez-nous : johan.tichit@ynov.com / abdallah.merad@ynov.com
