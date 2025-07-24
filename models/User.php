@@ -8,20 +8,16 @@ class User {
 
     // Méthode pour vérifier si l'utilisateur existe
     public function verifyUser($email, $password) {
-        // Requête pour récupérer l'utilisateur par email
         $query = "SELECT * FROM users WHERE email = :email LIMIT 1";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-    
+
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-        if ($user && password_verify($password, $user['password'])) {
-            // Retourne l'utilisateur si l'email et le mot de passe sont corrects
+
+        if ($user && password_verify($password, $user['mot_de_passe'])) {
             return $user;
         }
-    
-        // Retourne false si l'utilisateur n'est pas trouvé ou les identifiants sont incorrects
         return false;
     }
 
@@ -42,7 +38,7 @@ class User {
         }
 
         // Hachage du mot de passe
-        $mot_de_passe = password_hash($mot_de_passe, PASSWORD_BCRYPT);
+        // $mot_de_passe = password_hash($mot_de_passe, PASSWORD_BCRYPT); // This line is removed
 
         // Vérification si l'email existe déjà
         $stmt = $this->db->prepare("SELECT * FROM users WHERE email = :email");
