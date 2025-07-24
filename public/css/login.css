@@ -1,71 +1,67 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: white;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #fff;
     margin: 0;
     padding: 0;
-    }
-    
-.container {
-    width: 80%;
-    margin: 20px auto;
-}
-    
-#login { 
-    background-color: white;
-    color:black;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 60px;
-    box-shadow: 0 4px 8px #2185d8;
+    min-height: 100vh;
+    transition: background 0.3s;
 }
 
 .login-container {
-    width: 80%;
-    margin: 40px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px #2185d8;
+    background: rgba(255,255,255,0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(33,133,216,0.10), 0 1.5px 8px #2185d8;
+    padding: 48px 32px 32px 32px;
+    margin: 48px auto 0 auto;
+    width: 90%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
-    font-size: 24px;
-    color: #2c3e50;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #2185d8;
+    margin-bottom: 18px;
     text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* Tabs for switching between login and register */
 .tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    gap: 12px;
 }
 
 .tab-link {
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    border-radius: 8px;
-    border-color: #2185d8;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: color 0.3s ease, padding-bottom 0.3s ease;
-}
-
-.tab-link:hover,
-.tab-link.active {
+    padding: 12px 32px;
+    background: #f8fbff;
     color: #2185d8;
+    text-decoration: none;
+    border-radius: 8px 8px 0 0;
+    border: 1.5px solid #e3eaf7;
+    border-bottom: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
 }
 
-h2{
-    color:#2185d8;
+.tab-link.active, .tab-link:hover {
+    background: #eaf6ff;
+    color: #3533cd;
 }
 
-/* Form container styles */
 .tab-content {
     display: none;
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(33,133,216,0.07);
+    padding: 32px 18px 18px 18px;
+    margin-bottom: 0;
 }
 
 .tab-content.active {
@@ -78,94 +74,125 @@ form {
     gap: 15px;
 }
 
-/* Input fields */
 form input {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid black;
+    padding: 14px;
+    font-size: 1rem;
+    border: 1.5px solid #e3eaf7;
     border-radius: 8px;
-    background-color: #fafafa;
-    transition: border-color 0.3s ease;
+    background: #fafafa;
+    color: #2185d8;
+    transition: border 0.2s, box-shadow 0.2s;
 }
 
 form label {
-    color: black;
+    color: #3533cd;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
 form input:focus {
-    border-color: #2980b9;
+    border: 1.5px solid #2185d8;
+    box-shadow: 0 0 0 2px #eaf6ff;
     outline: none;
 }
 
-/* Buttons */
 form button {
-    padding: 12px 20px;
-    background-color:white;
-    color: black;
-    font-size: 18px;
+    padding: 14px 0;
+    background: linear-gradient(90deg, #2185d8 0%, #3533cd 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-    width: 25%;
-    margin-left: 38%;
-    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    width: 100%;
+    margin: 18px 0 0 0;
+    box-shadow: 0 2px 8px rgba(33,133,216,0.10);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 form button:hover {
-    color: #2185d8;
-    border-bottom: solid 2px;
+    background: linear-gradient(90deg, #3533cd 0%, #2185d8 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(33,133,216,0.18);
 }
 
-/* Error message styling */
 .error-message {
-    color: red;
-    font-size: 14px;
+    color: #e74c3c;
+    font-size: 1rem;
     margin-top: 10px;
     text-align: center;
+    background: #fff0f0;
+    border-radius: 8px;
+    padding: 8px 0;
 }
 
-/* Footer styles */
 footer {
     margin-top: 30px;
     text-align: center;
 }
+
 .back-btn {
     display: inline-block;
     margin-bottom: 20px;
-    background-color: white;
-    color: black;
+    background: #f8fbff;
+    color: #2185d8;
     margin-top: 30px;
     margin-left: 20px;
-    padding: 10px 20px;
+    padding: 12px 28px;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease, padding-bottom 0.3s ease;
-    width: 250px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1.5px solid #e3eaf7;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(33,133,216,0.04);
+    width: auto;
 }
 
-/* Effet au survol du bouton retour */
 .back-btn:hover {
-    background-color: white;
-    color: #2185d8;
+    background: #eaf6ff;
+    color: #3533cd;
+    box-shadow: 0 2px 8px rgba(33,133,216,0.10);
 }
 
 small {
     font-size: smaller;
-    color: #2185d8;;
+    color: #2185d8;
+    margin-bottom: 4px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .login-container {
-        width: 95%;
-        padding: 20px;
-    }
+.tab-content form {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: left;
+    background: #fff;
+    padding: 18px 18px 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(33,133,216,0.04);
+}
 
+.tab-content form label {
+    font-size: 0.97rem;
+}
+
+.tab-content form input {
+    font-size: 0.97rem;
+}
+
+@media (max-width: 700px) {
+    .login-container, #login {
+        padding: 18px 4px 12px 4px;
+        max-width: 98vw;
+    }
     h2 {
-        font-size: 20px;
+        font-size: 1.2rem;
     }
-
     form input,
     form button {
-        font-size: 14px;
+        font-size: 1rem;
+    }
+    .tabs {
+        gap: 4px;
     }
 }

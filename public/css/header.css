@@ -1,25 +1,28 @@
 /* Header - Styles de base */
 header {
     display: flex;
-    height: 120px;
+    height: 110px;
     justify-content: space-between;
     align-items: center;
-    padding: 28px 40px;
-    background: linear-gradient(90deg, #2185d8 0%, #3533cd 100%);
-    color: #fff;
+    padding: 24px 40px;
+    background: linear-gradient(90deg, #f8fbff 0%, #eaf6ff 100%);
+    color: #2185d8;
     border-radius: 0 0 18px 18px;
     box-shadow: 0 4px 16px rgba(33,133,216,0.10);
     font-family: 'Inter', Arial, sans-serif;
 }
 
 header .logo img {
-    height: 90px;
+    height: 80px;
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(33,133,216,0.10);
+    background: #fff;
+    border: 2px solid #e3eaf7;
+    padding: 4px;
 }
 
 .login-bouton {
-    color: #fff;
+    color: #2185d8;
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
@@ -31,7 +34,7 @@ header .logo img {
 
 .login-bouton:hover {
     background: #eaf6ff;
-    color: #2185d8;
+    color: #3533cd;
     box-shadow: 0 2px 8px rgba(33,133,216,0.10);
 }
 
