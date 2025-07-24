@@ -50,7 +50,7 @@ $competences = $competenceUserController->showCompetences($_SESSION['user_id']);
             <select name="id_competence" required>
                 <?php
                 // Utilisation de la méthode publique pour accéder à getAllCompetences et exclure les compétences déjà sélectionnées
-                $competencesList = $competenceUserController->getCompetenceUserModel()->getAllCompetences($_SESSION['user_id']);
+                $competencesList = $competenceUserController->getAllCompetences($_SESSION['user_id']);
                 foreach ($competencesList as $competence) {
                     echo "<option value='" . $competence['id'] . "'>" . htmlspecialchars($competence['nom']) . "</option>";
                 }
