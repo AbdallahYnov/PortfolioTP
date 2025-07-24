@@ -44,7 +44,7 @@ Ce projet est une application web développée en PHP & MySQL permettant aux uti
 ### Étapes d’Installation
 1. Cloner le projet sur votre serveur local :
    ```sh
-   git clone url_de_votre_repo
+   git clone [url_de_votre_repo](https://github.com/AbdallahYnov/PortfolioTP.git)
    cd nom_projet_a_renseigner
    ```
 2. Importer la base de données :
