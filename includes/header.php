@@ -1,7 +1,7 @@
 <?php
 // Vérifie si la session n'est pas déjà démarrée pour éviter l'erreur
 if (session_status() == PHP_SESSION_NONE) {
-    session_start(); // Démarre la session si elle n'est pas déjà active
+    // session_start(); // Démarre la session si elle n'est pas déjà active
 }
 
 // Régénérer l'ID de session pour éviter les attaques de fixation de session

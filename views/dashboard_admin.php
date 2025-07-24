@@ -1,7 +1,4 @@
 <?php
-// Démarrage de la session
-session_start();
-
 // Vérification que l'utilisateur est connecté et qu'il a le rôle 'admin'
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     // Si l'utilisateur n'est pas admin, rediriger vers la page de connexion ou dashboard utilisateur

@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once '../config/database.php'; // Inclure la configuration de la base de données
 require_once '../controllers/CompetenceUserController.php';
 

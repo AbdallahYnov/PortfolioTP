@@ -1,8 +1,6 @@
 <?php
 // Vérifier si la session est déjà active
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+// session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">

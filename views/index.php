@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('../models/User.php');
 include_once('../config/database.php');
 

@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('../models/User.php');
 require_once('../config/database.php');  // Assurez-vous que la connexion à la base de données est incluse
 
