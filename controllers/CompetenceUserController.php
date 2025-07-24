@@ -25,7 +25,7 @@ class CompetenceUserController {
 
             // Validation et assainissement des entrées utilisateur
             $id_competence = filter_input(INPUT_POST, 'id_competence', FILTER_SANITIZE_NUMBER_INT); // Assainir l'ID de compétence
-            $niveau = filter_input(INPUT_POST, 'niveau', FILTER_SANITIZE_STRING); // Assainir le niveau
+            $niveau = htmlspecialchars(trim($_POST['niveau']), ENT_QUOTES, 'UTF-8'); // Assainir le niveau
 
             // Vérification des champs
             if ($id_competence && $niveau) {
