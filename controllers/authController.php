@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('../models/User.php');  
 include_once('../config/database.php');
 
@@ -48,10 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mot_de_passe'], $_POST['confirm_password'])) {
         if ($_POST['mot_de_passe'] === $_POST['confirm_password']) {
             // Assainissement des entrées
-            $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
-            $prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING);
+            $nom = filter_var($_POST['nom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $prenom = filter_var($_POST['prenom'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-            $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
+            $mot_de_passe = password_hash(trim($_POST['mot_de_passe']), PASSWORD_DEFAULT);
             $role = 'user'; // Par défaut, le rôle est "user"
 
             // Gestion de la photo
