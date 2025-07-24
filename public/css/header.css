@@ -1,33 +1,46 @@
 /* Header - Styles de base */
 header {
     display: flex;
-    height: 140px;
+    height: 120px;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: linear-gradient(180deg, #3533cd, white);
-    color: black;
+    padding: 28px 40px;
+    background: linear-gradient(90deg, #2185d8 0%, #3533cd 100%);
+    color: #fff;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 16px rgba(33,133,216,0.10);
+    font-family: 'Inter', Arial, sans-serif;
 }
 
 header .logo img {
-    height: 140px;
+    height: 90px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(33,133,216,0.10);
 }
 
 .login-bouton {
-    color: black;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 22px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(33,133,216,0.04);
 }
 
 .login-bouton:hover {
+    background: #eaf6ff;
     color: #2185d8;
-    border-bottom: solid 2px;
+    box-shadow: 0 2px 8px rgba(33,133,216,0.10);
 }
 
 header nav ul {
     list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
 }
 
 

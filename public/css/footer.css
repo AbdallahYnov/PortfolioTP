@@ -1,15 +1,21 @@
 /* Footer - Styles de base */
 footer {
     text-align: center;
-    padding: 10px;
-    background: linear-gradient(180deg, white, #3533cd);
-    color: black;
-    margin-top: 30px;
+    padding: 32px 0 18px 0;
+    background: linear-gradient(180deg, #eaf6ff 0%, #f8fbff 100%);
+    color: #2185d8;
+    margin-top: 40px;
+    border-radius: 18px 18px 0 0;
+    font-family: 'Inter', Arial, sans-serif;
+    box-shadow: 0 -2px 12px rgba(33,133,216,0.07);
 }
 
 footer p {
     margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
+
 /* Assurez-vous que le body et le HTML prennent toute la hauteur */
 html, body {
     height: 100%;
@@ -35,6 +41,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 18px;
 }
 
 /* Partie supérieure du footer avec le logo */
@@ -42,13 +49,15 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 /* Logo centré */
 .footer-logo img {
     width: 120px;
     margin-bottom: 10px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(33,133,216,0.10);
 }
 
 /* Liens du footer */
@@ -56,27 +65,29 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 18px;
 }
 
 /* Style des liens */
 .footer-links a {
-    color: black;
+    color: #2185d8;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s ease, padding-bottom 0.3s ease;
+    font-size: 1.08rem;
+    font-weight: 600;
+    transition: color 0.2s, border-bottom 0.2s;
+    padding-bottom: 2px;
 }
 
 /* Effet hover sur les liens */
 .footer-links a:hover {
-    color: #2185d8;
-    border-bottom: solid 2px;
+    color: #3533cd;
+    border-bottom: solid 2px #2185d8;
 }
 
 /* Texte du bas */
 .footer-bottom {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 1rem;
+    color: #3533cd;
 }
 
