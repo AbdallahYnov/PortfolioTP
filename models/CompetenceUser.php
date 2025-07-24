@@ -68,17 +68,15 @@ class CompetenceUser {
         return $stmt->execute();
     }
 
-    // Récupérer toutes les compétences disponibles
-    public function getAllCompetences() {
-        try {
-            $query = "SELECT * FROM competences";
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            // Gérer les erreurs de base de données
-            die("Erreur lors de la récupération des compétences: " . $e->getMessage());
-        }
+    // Récupérer toutes les compétences disponibles, excluant celles déjà acquises par l'utilisateur
+    public function getAllCompetences($id_user) {
+        $query = "SELECT * FROM competences WHERE id NOT IN (
+            SELECT id_competence FROM competences_user WHERE id_user = :id_user
+        )";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>
