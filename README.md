@@ -66,19 +66,6 @@ Ce projet est une application web développée en PHP & MySQL permettant aux uti
    ```
    Puis accéder à l'application via `http://localhost:8000`
 
-## Comptes de Test
-
-### Compte Administrateur
-- **Email** : admin@example.com
-- **Mot de passe** : password
-
-### Compte Utilisateur
-- **Email** : user@example.com
-- **Mot de passe** : password
-
-### Compte Utilisateur
-- **Email** : user@example.com
-- **Mot de passe** : password
 
 ## Structure du Projet
 
@@ -96,8 +83,8 @@ UN exemple de structure possible (la première ligne doit respecter cette struct
 ## Technologies Utilisées
 - **Backend** : PHP
 - **Frontend** : HTML / CSS / JS
-- **Sécurité** : **à renseigner**
-- **Gestion du Projet** : **à renseigner**
+- **Sécurité** : Hashing
+- **Gestion du Projet** : Trello et Discord
 
 ## Licence
 Ce projet est sous licence MIT.
